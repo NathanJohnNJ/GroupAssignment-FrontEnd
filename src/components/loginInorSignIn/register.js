@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { registerUser } from "../../utils"
+import "./loginsignin.css";
 
 const Register = () => {
     const [username, setUsername] = useState()
@@ -21,22 +22,22 @@ const Register = () => {
     }
 
     return (
-        <div>
-            <h1>Register:</h1>
+        <div className="registerDiv">
+            <h1 className="registerTitle">Register:</h1>
             <form onSubmit={submitHandler}>
                 <placeholder>Username:
-                    <input onChange={(e) => setUsername(e.target.value)} required></input>
+                    <input className="textInput"  onChange={(e) => setUsername(e.target.value)} required></input>
                 </placeholder>
                 <br></br>
                 <label>Email:
-                    <input onChange={(e) => setEmail(e.target.value)} required></input>
+                    <input  className="textInput" onChange={(e) => setEmail(e.target.value)} required></input>
                 </label>
                 <br></br>
                 <label>Password:
-                    <input type="password" onChange={(e) => setPassword(e.target.value)} required></input>
+                    <input  className="textInput" type="password" onChange={(e) => setPassword(e.target.value)} required></input>
                 </label>
                 <br></br>
-                <button type="submit">Register</button>
+                <button  className="btn" type="submit">Register</button>
             </form>
         </div>
     )

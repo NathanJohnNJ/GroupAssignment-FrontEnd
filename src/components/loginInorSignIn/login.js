@@ -19,46 +19,47 @@ const Login = ({newUser}, props) => {
     };
 
     return (
-        <>
-            <div>
-                <h1>Login </h1>
-                {!isLoggedin ? (
-                    <>
-                        <form action="">
-                            <input
-                                type="text"
-                                onChange={(e) => setUsername(e.target.value)}
-                                value={username}
-                                placeholder="Username"
-                            />
-                            <br  />
-                            <input
-                                type="email"
-                                onChange={(e) => setEmail(e.target.value)}
-                                value={email}
-                                placeholder="Email"
-                            />
-                            <br  />
-                            <input
-                                type="password"
-                                onChange={(e) => setPassword(e.target.value)}
-                                value={password}
-                                placeholder="Password"
-                            />
-                            <br  />
-                            <button type="submit" onClick={login}>
-                                GO
-                            </button>
-                        </form>
-                    </>
-                ) : (
-                    <>
-                        <h1>User is logged in</h1>
-                        <Logout cookie={props.cookie} setIsLoggedin={setIsLoggedin} />                     
-                    </>
-                )}
-            </div>
-        </>
+        <div className="loginDiv">
+            <h1 className="loginTitle">Login </h1>
+            {!isLoggedin ? (
+                <>
+                    <form action="">
+                        <input
+                            className="textInput"
+                            type="text"
+                            onChange={(e) => setUsername(e.target.value)}
+                            value={username}
+                            placeholder="Username"
+                        />
+                        <br  />
+                        <input
+                            type="email"
+                            className="textInput"
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                            placeholder="Email"
+                        />
+                        <br  />
+                        <input
+                            type="password"
+                            className="textInput"
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            placeholder="Password"
+                        />
+                        <br  />
+                        <button className="btn" type="submit" onClick={login}>
+                            GO
+                        </button>
+                    </form>
+                </>
+            ) : (
+                <>
+                    <h2 className="loggedIn">User is logged in</h2>
+                    <Logout cookie={props.cookie} setIsLoggedin={setIsLoggedin} />                     
+                </>
+            )}
+        </div>
     );
 }
  
