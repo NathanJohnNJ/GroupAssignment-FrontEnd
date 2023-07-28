@@ -1,4 +1,4 @@
-
+import './todolist.css';
 import React, { useState } from 'react';
 
 const TodoItem = ({ task, completed, dueDate, onToggle, onDelete, onEdit }) => {
@@ -24,16 +24,17 @@ const TodoItem = ({ task, completed, dueDate, onToggle, onDelete, onEdit }) => {
   };
 
   return (
-    <div>
+    <div className="itemDiv">
       {isEditing ? (
         <>
-          <input type="text" value={editedTask} onChange={handleChange} />
+          <input className="itemInput"  type="text" value={editedTask} onChange={handleChange} />
           <input
+            className="dateInput" 
             type="date"
             value={editedDueDate}
             onChange={handleDueDateChange}
           />
-          <button onClick={handleSave}>Save</button>
+          <button  className="btn" onClick={handleSave}>Save</button>
         </>
       ) : (
         <>
@@ -41,9 +42,9 @@ const TodoItem = ({ task, completed, dueDate, onToggle, onDelete, onEdit }) => {
             {task}
           </span>
           <span> | Due Date: {dueDate}</span>
-          <button onClick={onToggle}>{completed ? 'Undo' : 'Complete'}</button>
-          <button onClick={handleEdit}>Edit</button>
-          <button onClick={onDelete}>Delete</button>
+          <button  className="btn" onClick={onToggle}>{completed ? 'Undo' : 'Complete'}</button>
+          <button  className="btn" onClick={handleEdit}>Edit</button>
+          <button  className="btn" onClick={onDelete}>Delete</button>
         </>
       )}
     </div>

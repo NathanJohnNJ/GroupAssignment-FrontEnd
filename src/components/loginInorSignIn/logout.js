@@ -1,4 +1,5 @@
 import React from "react";
+import "./loginsignin.css";
 
 const Logout = (props) => {
 
@@ -10,8 +11,8 @@ const Logout = (props) => {
         };
         
         return (
-        <div>
-            <button onClick={ () => logout()}>logout user</button>
+        <div className="logoutDiv">
+            <button className="btn" onClick={ () => logout()}>logout user</button>
         </div>
         )
     };

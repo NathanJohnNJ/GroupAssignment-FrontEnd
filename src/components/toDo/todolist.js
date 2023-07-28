@@ -1,5 +1,4 @@
-
-
+import './todolist.css';
 import React, { useState } from 'react';
 import TodoItem from './todoitem';
 
@@ -53,21 +52,23 @@ const TodoList = () => {
   };
 
   return (
-    <div>
-      <button onClick={handleSort}>Sort by Due Date</button>
+    <div  className="toDoDiv" >
+      <button className="btn" onClick={handleSort}>Sort by Due Date</button>
       <div>
         <input
           type="text"
+          className="textInput" 
           value={newTask}
           onChange={(e) => setNewTask(e.target.value)}
           placeholder="Add new task"
         />
         <input
           type="date"
+          className="dateInput"
           value={newDueDate}
           onChange={(e) => setNewDueDate(e.target.value)}
         />
-        <button onClick={handleAddTask}>Add Task</button>
+        <button  className="btn" onClick={handleAddTask}>Add Task</button>
       </div>
       {tasks.map((task) => (
         <TodoItem
